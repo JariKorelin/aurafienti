@@ -1,5 +1,6 @@
 backend:
-  name: peippo/aurafienti
+  name: github
+  repo: peippo/aurafienti
 
 media_folder: static/assets
 public_folder: assets
