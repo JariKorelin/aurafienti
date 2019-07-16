@@ -1,5 +1,5 @@
 backend:
-  name: test-repo
+  name: peippo/aurafienti
 
 media_folder: static/assets
 public_folder: assets
