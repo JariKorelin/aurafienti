@@ -10,9 +10,27 @@ class Layout extends React.Component {
 
     const header = (
       <>
-        <Link to={locale === "en" ? "/fi" : "/"}>
-          <p>Change language</p>
-        </Link>
+        <LanguageBar>
+          <Link
+            to="/"
+            style={{
+              margin: `0 ${rhythm(3 / 4)}`,
+            }}
+            // activeStyle={{ boxShadow: "none" }}
+          >
+            <p style={{ marginBottom: "0" }}>In English</p>
+          </Link>
+          <Link
+            to="/fi"
+            style={{
+              margin: `0 ${rhythm(0.1)}`,
+            }}
+            // activeStyle={{ boxShadow: "none" }}
+            // partiallyActive={true}
+          >
+            <p style={{ marginBottom: "0" }}>Suomeksi</p>
+          </Link>
+        </LanguageBar>
         <h1
           style={{
             ...scale(1.5),
@@ -26,7 +44,7 @@ class Layout extends React.Component {
               textDecoration: `none`,
               color: `inherit`,
             }}
-            to={`/`}
+            to={locale === "en" ? "/" : "/fi"}
           >
             {title}
           </Link>
@@ -63,6 +81,12 @@ const Wrapper = styled.div`
 const Footer = styled.footer`
   text-align: center;
   margin: 24px;
+`
+
+const LanguageBar = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: ${rhythm(1)};
 `
 
 export default Layout
