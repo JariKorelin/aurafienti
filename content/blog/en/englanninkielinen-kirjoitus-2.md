@@ -1,6 +1,6 @@
 ---
 locale: en
-title: Englanninkielinen kirjoitus 2
+title: Another article in English
 description: >-
   Option iracundia efficiantur no est. Et eum ullum adipisci adversarium, sed ex
   quaeque laboramus, ei etiam regione cum. Salutatus aliquando ei eam, vix an
