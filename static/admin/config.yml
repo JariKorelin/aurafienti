@@ -6,13 +6,68 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: content/blog
+  - label: "Blog - EN"
+    name: "blog-en"
+    folder: content/blog/en
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: description, label: Description }
-      - { name: body, label: Body, widget: markdown }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+      - { label: "Title", name: "title" }
+      - { label: "Description", name: "description" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "select",
+          multiple: true,
+          options: ["Article", "News", "Reference"],
+          default: ["Article"],
+        }
+
+  - label: "Blog - FI"
+    name: "blog-fi"
+    folder: content/blog/fi
+    create: true
+    fields:
+      - { label: "Locale", name: "locale", widget: "hidden", default: "fi" }
+      - { label: "Title", name: "title" }
+      - { label: "Description", name: "description" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "select",
+          multiple: true,
+          options: ["Artikkeli", "Uutinen", "Referenssi"],
+          default: ["Artikkeli"],
+        }
+
+  - label: "Frontpage introduction EN"
+    name: "frontpage-introduction-en"
+    file: "src/pages/frontpage-introduction/index.md"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "frontpage-introduction",
+        }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+      - { label: "Introduction heading", name: "heading", widget: "string" }
+      - { label: "Introduction text", name: "introduction", widget: "text" }
+
+  - label: "Frontpage introduction FI"
+    name: "frontpage-introduction-fi"
+    file: "src/pages/frontpage-introduction/index.fi.md"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "frontpage-introduction",
+        }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "fi" }
+      - { label: "Introduction heading", name: "heading", widget: "string" }
+      - { label: "Introduction text", name: "introduction", widget: "text" }
