@@ -9,7 +9,9 @@ description: >-
 date: 2019-07-16T10:35:15.724Z
 tags:
   - Article
+templateKey: blog-post
 ---
+
 Fastidii tractatos adipiscing has te. Vim ei putant aperiam constituam, ex sit tale graece dolorem, dictas officiis ut quo. Inani scriptorem eu sea, ad vidit patrioque est, eu nec cibo decore consequat. His soleat eligendi ex.
 
 Qui no antiopam partiendo. Duis choro has ex, nibh delicata at his. Habemus incorrupte et ius, purto sonet gloriatur ad nam, appareat quaerendum omittantur ne qui. Reque inani soluta eos no.
