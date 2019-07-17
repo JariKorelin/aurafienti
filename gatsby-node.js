@@ -19,7 +19,6 @@ exports.createPages = ({ graphql, actions }) => {
                 slug
               }
               frontmatter {
-                title
                 templateKey
                 locale
               }
@@ -30,16 +29,20 @@ exports.createPages = ({ graphql, actions }) => {
     `
   ).then(result => {
     if (result.errors) {
-      throw result.errors
+      result.errors.forEach(e => console.error(e.toString()))
+      return Promise.reject(result.errors)
     }
 
-    // Create blog posts pages.
-    const posts = result.data.allMarkdownRemark.edges
+    // Filter out the static content so we don't create pages for those
+    const posts = result.data.allMarkdownRemark.edges.filter(edge => {
+      if (edge.node.frontmatter.templateKey === "frontpage-introduction") {
+        return false
+      } else {
+        return true
+      }
+    })
 
-    posts.forEach((post, index) => {
-      // const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      // const next = index === 0 ? null : posts[index - 1].node
-
+    posts.forEach(post => {
       // Check if pages has a template key
       const locale = post.node.frontmatter.locale
       if (post.node.frontmatter.templateKey != null) {
@@ -53,15 +56,10 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             id,
             locale,
-            slug: post.node.fields.slug,
-            // previous,
-            // next,
           },
         })
       }
     })
-
-    return null
   })
 }
 

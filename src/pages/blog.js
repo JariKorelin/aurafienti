@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import BlogPosts from "../components/blogposts"
 import SEO from "../components/seo"
@@ -17,7 +16,6 @@ class Blog extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle} locale={locale}>
         <SEO title="Aurafienti" />
-        <Bio />
         <BlogPosts posts={posts} />
         <Link to={locale === "en" ? "/" : "/fi"}>
           <Button marginTop="85px">

@@ -10,6 +10,7 @@ collections:
     name: "blog-en"
     folder: content/blog/en
     create: true
+    slug: "{{month}}-{{day}}-{{year}}-{{slug}}"
     fields:
       - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
       - { label: "Title", name: "title" }
@@ -34,6 +35,7 @@ collections:
     name: "blog-fi"
     folder: content/blog/fi
     create: true
+    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
     fields:
       - { label: "Locale", name: "locale", widget: "hidden", default: "fi" }
       - { label: "Title", name: "title" }
@@ -64,6 +66,12 @@ collections:
           - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
           - { label: "Introduction heading", name: "heading", widget: "string" }
           - { label: "Introduction text", name: "introduction", widget: "text" }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "frontpage-introduction",
+            }
       - label: "Frontpage introduction FI"
         name: "frontpage-introduction-fi"
         file: "src/templates/frontpage-introduction/index.fi.md"
@@ -71,3 +79,9 @@ collections:
           - { label: "Locale", name: "locale", widget: "hidden", default: "fi" }
           - { label: "Introduction heading", name: "heading", widget: "string" }
           - { label: "Introduction text", name: "introduction", widget: "text" }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "frontpage-introduction",
+            }
