@@ -10,11 +10,12 @@ import Button from "../components/button"
 class IndexPage extends React.Component {
   render() {
     const { data } = this.props
+    const { locale } = this.props.pageContext
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={siteTitle} locale={locale}>
         <SEO title="Aurafienti" />
         <Bio />
         <div style={{ margin: "20px 0 40px" }}>
@@ -55,13 +56,21 @@ class IndexPage extends React.Component {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query {
+  query blogPosts($locale: String) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "blog-post" }
+          locale: { eq: $locale }
+        }
+      }
+    ) {
       edges {
         node {
           excerpt

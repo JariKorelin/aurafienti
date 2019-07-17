@@ -24,6 +24,12 @@ collections:
           options: ["Article", "News", "Reference"],
           default: ["Article"],
         }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
   - label: "Blog - FI"
     name: "blog-fi"
     folder: content/blog/fi
@@ -42,32 +48,26 @@ collections:
           options: ["Artikkeli", "Uutinen", "Referenssi"],
           default: ["Artikkeli"],
         }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
   - name: "static-content"
     label: "Static content"
     files:
       - label: "Frontpage introduction EN"
         name: "frontpage-introduction-en"
-        file: "src/pages/frontpage-introduction/index.md"
+        file: "src/templates/frontpage-introduction/index.md"
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "frontpage-introduction",
-            }
           - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
           - { label: "Introduction heading", name: "heading", widget: "string" }
           - { label: "Introduction text", name: "introduction", widget: "text" }
       - label: "Frontpage introduction FI"
         name: "frontpage-introduction-fi"
-        file: "src/pages/frontpage-introduction/index.fi.md"
+        file: "src/templates/frontpage-introduction/index.fi.md"
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "frontpage-introduction",
-            }
           - { label: "Locale", name: "locale", widget: "hidden", default: "fi" }
           - { label: "Introduction heading", name: "heading", widget: "string" }
           - { label: "Introduction text", name: "introduction", widget: "text" }
