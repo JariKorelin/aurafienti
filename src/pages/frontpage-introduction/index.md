@@ -2,5 +2,10 @@
 templateKey: frontpage-introduction
 locale: en
 heading: Frontpage introduction heading
-introduction: Lorem ipsum dolor sit amet
+introduction: >-
+  His an affert alterum, usu ad blandit oportere prodesset. Eos in eros quaestio
+  ullamcorper, sea no regione perpetua scripserit. Nibh etiam dicant no ius. Eum
+  error fierent placerat ad, dolorem splendide abhorreant pri in. An quo malis
+  solet dissentias. Quo ei brute decore.
 ---
+
