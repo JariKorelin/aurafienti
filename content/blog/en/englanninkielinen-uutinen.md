@@ -1,6 +1,6 @@
 ---
 locale: en
-title: Englanninkielinen uutinen
+title: News in English
 description: >-
   Ut verear voluptatum vix, no ius justo movet. Veritus accumsan vix te, sanctus
   imperdiet ne sea, his at intellegam efficiantur. Ius dicta tantas maluisset
