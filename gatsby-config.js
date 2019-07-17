@@ -1,13 +1,9 @@
 module.exports = {
   siteMetadata: {
-    // edit below
-    title: `Gatsby Starter Personal Blog`,
-    author: `Kyle Matthews`,
-    description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    title: `Aurafienti`,
+    description: `We deliver Finland`,
+    author: `Jari Korelin`,
+    siteUrl: `https://aurafienti.netlify.com/`,
   },
   plugins: [
     `gatsby-plugin-netlify-cms`,
@@ -56,21 +52,19 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // edit below
         // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Aurafienti`,
+        short_name: `Aurafienti`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#4f8dc5`,
         display: `minimal-ui`,
-        // edit below
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/icon-aurafienti.png`,
       },
     },
     {

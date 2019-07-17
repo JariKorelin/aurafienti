@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-personal-starter-blog",
+  "name": "aurafienti",
   "private": true,
-  "description": "A personal blog starter for a blog powered by Netlify CMS, based on the default blog starter",
+  "description": "Aurafienti blog powered by Netlify CMS",
   "version": "0.1.0",
-  "author": "Thomas Wang <thomas@wang.sh>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
