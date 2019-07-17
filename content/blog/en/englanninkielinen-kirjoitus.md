@@ -1,6 +1,6 @@
 ---
 locale: en
-title: Englanninkielinen kirjoitus
+title: Article in English
 description: >-
   Cu sea simul tincidunt. Clita prompta deleniti id qui, dicta blandit lobortis
   duo ei. Mel eu labores omittantur, zril rationibus mea ei. Duo et malis
