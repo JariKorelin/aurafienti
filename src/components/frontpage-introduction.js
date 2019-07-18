@@ -1,37 +1,31 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
+import { rhythm } from "../utils/typography"
 
-function FrontpageIntroduction() {
+function FrontpageIntroduction({ content }) {
   return (
-    <StaticQuery
-      query={frontpageDescriptionQuery}
-      render={data => {
-        const { author } = data.site.siteMetadata
+    <Container>
+      {content.map(({ node }) => {
         return (
-          <Container>
-            <p>
-              Lorem ipsum <strong>{author}</strong> dolor sit amet.
-            </p>
-          </Container>
+          <>
+            <h1 style={{ marginTop: rhythm(1) }}>{node.frontmatter.title}</h1>
+            <p>{node.frontmatter.introduction}</p>
+          </>
         )
-      }}
-    />
+      })}
+    </Container>
   )
 }
 
-const frontpageDescriptionQuery = graphql`
-  query frontpageDescriptionQuery {
-    site {
-      siteMetadata {
-        author
-      }
-    }
-  }
-`
-
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+  z-index: 10;
+  position: relative;
+  margin-top: ${rhythm(-3)};
+  border-radius: 0 50px 0 0;
 `
 
 export default FrontpageIntroduction

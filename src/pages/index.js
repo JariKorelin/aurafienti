@@ -12,12 +12,12 @@ class IndexPage extends React.Component {
     const { locale } = this.props.pageContext
     const localeUrl = locale === "en" ? "" : locale
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const posts = data.blogPosts.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle} locale={locale}>
         <SEO title="Aurafienti" />
-        <FrontpageIntroduction />
+        <FrontpageIntroduction content={data.frontpageIntroduction.edges} />
         <BlogPosts posts={posts} />
         <Link to={`/${localeUrl}/blog/`}>
           <Button marginTop="85px">
@@ -32,13 +32,14 @@ class IndexPage extends React.Component {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query blogPosts($locale: String) {
+  query siteData($locale: String) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(
+
+    blogPosts: allMarkdownRemark(
       limit: 2
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
@@ -59,6 +60,24 @@ export const pageQuery = graphql`
             title
             description
             locale
+          }
+        }
+      }
+    }
+
+    frontpageIntroduction: allMarkdownRemark(
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "frontpage-introduction" }
+          locale: { eq: $locale }
+        }
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            introduction
           }
         }
       }
