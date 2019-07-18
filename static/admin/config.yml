@@ -64,7 +64,7 @@ collections:
         file: "src/templates/frontpage-introduction/index.md"
         fields:
           - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
-          - { label: "Introduction heading", name: "heading", widget: "string" }
+          - { label: "Introduction heading", name: "title", widget: "string" }
           - { label: "Introduction text", name: "introduction", widget: "text" }
           - {
               label: "Template Key",
@@ -77,7 +77,7 @@ collections:
         file: "src/templates/frontpage-introduction/index.fi.md"
         fields:
           - { label: "Locale", name: "locale", widget: "hidden", default: "fi" }
-          - { label: "Introduction heading", name: "heading", widget: "string" }
+          - { label: "Introduction heading", name: "title", widget: "string" }
           - { label: "Introduction text", name: "introduction", widget: "text" }
           - {
               label: "Template Key",
