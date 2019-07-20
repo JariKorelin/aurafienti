@@ -13,6 +13,7 @@ const Layout = ({ children, locale }) => {
       ) {
         edges {
           node {
+            id
             frontmatter {
               sectionHeading
               title

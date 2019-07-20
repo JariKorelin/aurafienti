@@ -10,13 +10,13 @@ function FooterIntroduction({ content, locale }) {
           if (node.frontmatter.locale !== locale) return false
 
           return (
-            <>
+            <div key={node.id}>
               <h2 style={{ marginTop: rhythm(1) }}>
                 {node.frontmatter.sectionHeading}
               </h2>
               <h2 style={{ marginTop: rhythm(1) }}>{node.frontmatter.title}</h2>
               <p>{node.frontmatter.introduction}</p>
-            </>
+            </div>
           )
         })}
       </Container>

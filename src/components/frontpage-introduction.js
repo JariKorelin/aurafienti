@@ -7,10 +7,10 @@ function FrontpageIntroduction({ content }) {
     <Container>
       {content.map(({ node }) => {
         return (
-          <>
+          <div key={node.id}>
             <h1 style={{ marginTop: rhythm(1) }}>{node.frontmatter.title}</h1>
             <p>{node.frontmatter.introduction}</p>
-          </>
+          </div>
         )
       })}
     </Container>

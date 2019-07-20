@@ -10,7 +10,7 @@ class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { locale } = this.props.pageContext
-    const localeUrl = locale === "en" ? "" : locale
+    const localeUrl = locale === "en" ? "" : `/${locale}`
     const siteTitle = data.site.siteMetadata.title
     const posts = data.blogPosts.edges
 
@@ -19,7 +19,7 @@ class IndexPage extends React.Component {
         <SEO title="Aurafienti" />
         <FrontpageIntroduction content={data.frontpageIntroduction.edges} />
         <BlogPosts posts={posts} />
-        <Link to={`/${localeUrl}/blog/`}>
+        <Link to={`${localeUrl}/blog/`}>
           <Button marginTop="85px">
             {locale === "en" ? "View archive" : "Vanhemmat kirjoitukset"}
           </Button>
@@ -75,6 +75,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          id
           frontmatter {
             title
             introduction
