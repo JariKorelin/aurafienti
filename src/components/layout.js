@@ -3,11 +3,12 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Header from "../components/header"
 import FooterIntroduction from "../components/footer-introduction"
+import ContactSection from "../components/contact-section"
 import { rhythm } from "../utils/typography"
 
 const Layout = ({ children, locale }) => {
   const data = useStaticQuery(graphql`
-    query HeaderQuery {
+    query FooterQuery {
       footerIntroduction: allMarkdownRemark(
         filter: { frontmatter: { templateKey: { eq: "footer-introduction" } } }
       ) {
@@ -18,6 +19,20 @@ const Layout = ({ children, locale }) => {
               sectionHeading
               title
               introduction
+              locale
+            }
+          }
+        }
+      }
+      contactSection: allMarkdownRemark(
+        filter: { frontmatter: { templateKey: { eq: "contact-section" } } }
+      ) {
+        edges {
+          node {
+            id
+            html
+            frontmatter {
+              sectionHeading
               locale
             }
           }
@@ -34,6 +49,7 @@ const Layout = ({ children, locale }) => {
         locale={locale}
         content={data.footerIntroduction.edges}
       />
+      <ContactSection locale={locale} content={data.contactSection.edges} />
       <Footer>
         © {new Date().getFullYear()}, Built with
         {` `}

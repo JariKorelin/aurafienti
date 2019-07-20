@@ -121,3 +121,37 @@ collections:
               widget: "hidden",
               default: "footer-introduction",
             }
+      - label: "Contact section EN"
+        name: "contact-section-en"
+        file: "src/templates/contact-section/index.md"
+        fields:
+          - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+          - {
+              label: "Section heading",
+              name: "sectionHeading",
+              widget: "string",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "contact-section",
+            }
+      - label: "Contact section FI"
+        name: "contact-section-fi"
+        file: "src/templates/contact-section/index.fi.md"
+        fields:
+          - { label: "Locale", name: "locale", widget: "hidden", default: "fi" }
+          - {
+              label: "Section heading",
+              name: "sectionHeading",
+              widget: "string",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "contact-section",
+            }

@@ -37,7 +37,8 @@ exports.createPages = ({ graphql, actions }) => {
     const posts = result.data.allMarkdownRemark.edges.filter(edge => {
       if (
         edge.node.frontmatter.templateKey === "frontpage-introduction" ||
-        edge.node.frontmatter.templateKey === "footer-introduction"
+        edge.node.frontmatter.templateKey === "footer-introduction" ||
+        edge.node.frontmatter.templateKey === "contact-section"
       ) {
         return false
       } else {
