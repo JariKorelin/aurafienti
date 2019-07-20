@@ -85,3 +85,39 @@ collections:
               widget: "hidden",
               default: "frontpage-introduction",
             }
+      - label: "Footer introduction EN"
+        name: "footer-introduction-en"
+        file: "src/templates/footer-introduction/index.md"
+        fields:
+          - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+          - {
+              label: "Section heading",
+              name: "sectionHeading",
+              widget: "string",
+            }
+          - { label: "Introduction heading", name: "title", widget: "string" }
+          - { label: "Introduction text", name: "introduction", widget: "text" }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "footer-introduction",
+            }
+      - label: "Footer introduction FI"
+        name: "footer-introduction-fi"
+        file: "src/templates/footer-introduction/index.fi.md"
+        fields:
+          - { label: "Locale", name: "locale", widget: "hidden", default: "fi" }
+          - {
+              label: "Section heading",
+              name: "sectionHeading",
+              widget: "string",
+            }
+          - { label: "Introduction heading", name: "title", widget: "string" }
+          - { label: "Introduction text", name: "introduction", widget: "text" }
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "footer-introduction",
+            }

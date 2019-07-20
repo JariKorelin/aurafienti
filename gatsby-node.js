@@ -35,7 +35,10 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Filter out the static content so we don't create pages for those
     const posts = result.data.allMarkdownRemark.edges.filter(edge => {
-      if (edge.node.frontmatter.templateKey === "frontpage-introduction") {
+      if (
+        edge.node.frontmatter.templateKey === "frontpage-introduction" ||
+        edge.node.frontmatter.templateKey === "footer-introduction"
+      ) {
         return false
       } else {
         return true
