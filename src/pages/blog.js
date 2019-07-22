@@ -20,7 +20,7 @@ class Blog extends React.Component {
         <Heading>{locale === "en" ? "Archive" : "Arkisto"}</Heading>
         <BlogPosts posts={posts} />
         <Link to={locale === "en" ? "/" : "/fi"}>
-          <Button secondary marginTop="85px">
+          <Button secondary marginTop="40px">
             {locale === "en" ? "Back to frontpage" : "Takaisin etusivulle"}
           </Button>
         </Link>
@@ -67,5 +67,6 @@ export const pageQuery = graphql`
 `
 
 const Heading = styled.h1`
-  margin-top: 0;
+  margin-top: ${rhythm(1)};
+  text-align: center;
 `

@@ -79,7 +79,7 @@ const Container = styled.main`
   margin-left: auto;
   margin-right: auto;
   max-width: ${rhythm(26)};
-  padding: ${rhythm(0.5)} ${rhythm(3 / 4)};
+  padding: ${rhythm(0.5)} ${rhythm(3 / 4)} ${rhythm(2.5)};
 
   background-color: white;
   z-index: 10;
