@@ -25,7 +25,7 @@ class IndexPage extends React.Component {
         </SectionHeading>
         <BlogPosts posts={posts} />
         <Link to={`${localeUrl}/blog/`}>
-          <Button marginTop="85px">
+          <Button marginTop="40px">
             {locale === "en" ? "View archive" : "Vanhemmat kirjoitukset"}
           </Button>
         </Link>
@@ -45,7 +45,7 @@ export const pageQuery = graphql`
     }
 
     blogPosts: allMarkdownRemark(
-      limit: 3
+      limit: 2
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         frontmatter: {

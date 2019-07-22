@@ -28,20 +28,36 @@ function ContactSection({ content, locale }) {
                 >
                   <p>
                     <label>
-                      Name: <input type="text" name="name" />
+                      {locale === "en" ? "Name" : "Nimi"}:
+                      <input
+                        style={{ width: "100%" }}
+                        type="text"
+                        name="name"
+                      />
                     </label>
                   </p>
                   <p>
                     <label>
-                      E-mail: <input type="email" name="email" />
+                      {locale === "en" ? "E-mail" : "Sähköposti"}:{" "}
+                      <input
+                        style={{ width: "100%" }}
+                        type="email"
+                        name="email"
+                      />
                     </label>
                   </p>
                   <p>
                     <label>
-                      Message: <textarea name="message"></textarea>
+                      {locale === "en" ? "Message" : "Viesti"}:{" "}
+                      <textarea
+                        style={{ width: "100%" }}
+                        name="message"
+                      ></textarea>
                     </label>
                   </p>
-                  <Button type="submit">Send</Button>
+                  <Button type="submit">
+                    {locale === "en" ? "Send" : "Lähetä"}
+                  </Button>
                 </form>
               </Col>
             </Row>
@@ -56,26 +72,37 @@ const Wrapper = styled.div``
 
 const Container = styled.section`
   display: flex;
-  flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  max-width: ${rhythm(24)};
+  max-width: ${rhythm(26)};
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
 `
 
 const Row = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   align-items: flex-start;
+
+  @media screen and (min-width: 640px) {
+    flex-direction: row;
+  }
 `
 
 const Col = styled.div`
   &:last-child {
-    padding: ${rhythm(0.75)};
-    margin-top: ${rhythm(-2)};
-    margin-left: ${rhythm(1)};
-    background-color: white;
-    box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.15);
-    border-radius: 0 50px 0 0;
+    @media screen and (min-width: 640px) {
+      padding: ${rhythm(0.75)};
+      margin-left: ${rhythm(1)};
+      background-color: white;
+      box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.15);
+      border-radius: 0 50px 0 0;
+      margin-top: ${rhythm(-2)};
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    width: calc(50% - ${rhythm(1)});
   }
 `
 

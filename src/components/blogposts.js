@@ -5,39 +5,71 @@ import styled from "styled-components"
 
 function BlogPosts({ posts }) {
   return (
-    <div style={{ margin: "20px 0 40px" }}>
+    <Wrapper>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
+
         return (
-          <div key={node.fields.slug}>
+          <Item key={node.fields.slug} to={`${node.fields.slug}`}>
             {node.frontmatter.tags.map((tag, index) => (
               <Tag key={index}>{tag}</Tag>
             ))}
+            <small style={{ color: "rgba(0, 0, 0, 0.9)" }}>
+              {node.frontmatter.date}
+            </small>
             <h3
               style={{
-                marginTop: rhythm(1 / 4),
+                marginTop: rhythm(1 / 2),
                 marginBottom: rhythm(1 / 4),
               }}
             >
-              <Link style={{ boxShadow: `none` }} to={`${node.fields.slug}`}>
-                {title}
-              </Link>
+              {title}
             </h3>
-            <small>{node.frontmatter.date}</small>
             <p
+              style={{
+                fontSize: "15px",
+                color: "rgba(0, 0, 0, 0.9)",
+                marginBottom: 0,
+              }}
               dangerouslySetInnerHTML={{
                 __html: node.frontmatter.description || node.excerpt,
               }}
             />
-          </div>
+          </Item>
         )
       })}
-    </div>
+    </Wrapper>
   )
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: ${rhythm(-0.5)};
+`
+
+const Item = styled(props => <Link {...props} />)`
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: ${rhythm(0.75)};
+  margin: ${rhythm(0.5)};
+  border-radius: 0 25px 0 0;
+  box-shadow: 0 10px 50px -20px rgba(0, 0, 0, 0.05);
+  transition: all, 0.25s;
+
+  @media screen and (min-width: 640px) {
+    width: calc(50% - ${rhythm(1)});
+  }
+
+  &:hover {
+    background-color: #f7f7f7;
+    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.15);
+  }
+`
+
 const Tag = styled.span`
-  background-color: #f0f0f0;
+  background-color: white;
+  color: black;
   padding: ${rhythm(0.25)};
   margin-right: ${rhythm(0.25)};
   border-radius: 3px;

@@ -26,7 +26,7 @@ function FooterIntroduction({ content, locale }) {
 }
 
 const Wrapper = styled.div`
-  background-color: lightgray;
+  background-color: #f4f4f4;
 `
 
 const Container = styled.section`
@@ -34,7 +34,7 @@ const Container = styled.section`
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  max-width: ${rhythm(24)};
+  max-width: ${rhythm(26)};
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
 `
 
