@@ -40,7 +40,7 @@ export const pageQuery = graphql`
     }
 
     blogPosts: allMarkdownRemark(
-      limit: 2
+      limit: 3
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         frontmatter: {
@@ -57,6 +57,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
+            tags
             title
             description
             locale
