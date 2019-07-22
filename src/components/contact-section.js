@@ -1,71 +1,74 @@
-import React from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
 import Button from "../components/button"
 import { rhythm } from "../utils/typography"
 import { SectionHeading } from "../utils/styledComponents"
 
-function ContactSection({ content, locale }) {
-  return (
-    <Wrapper>
-      <Container>
-        {content.map(({ node }) => {
-          if (node.frontmatter.locale !== locale) return false
+class ContactSection extends Component {
+  render() {
+    const { content, locale } = this.props
+    return (
+      <Wrapper>
+        <Container>
+          {content.map(({ node }) => {
+            if (node.frontmatter.locale !== locale) return false
 
-          return (
-            <Row key={node.id}>
-              <Col>
-                <SectionHeading style={{ marginTop: rhythm(0.5) }}>
-                  {node.frontmatter.sectionHeading}
-                </SectionHeading>
-                <div dangerouslySetInnerHTML={{ __html: node.html }} />
-              </Col>
-              <Col>
-                <form
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
-                  style={{ marginBottom: 0 }}
-                >
-                  <p>
-                    <label>
-                      {locale === "en" ? "Name" : "Nimi"}:
-                      <input
-                        style={{ width: "100%" }}
-                        type="text"
-                        name="name"
-                      />
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      {locale === "en" ? "E-mail" : "Sähköposti"}:{" "}
-                      <input
-                        style={{ width: "100%" }}
-                        type="email"
-                        name="email"
-                      />
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      {locale === "en" ? "Message" : "Viesti"}:{" "}
-                      <textarea
-                        style={{ width: "100%" }}
-                        name="message"
-                      ></textarea>
-                    </label>
-                  </p>
-                  <Button secondary type="submit">
-                    {locale === "en" ? "Send" : "Lähetä"}
-                  </Button>
-                </form>
-              </Col>
-            </Row>
-          )
-        })}
-      </Container>
-    </Wrapper>
-  )
+            return (
+              <Row key={node.id}>
+                <Col>
+                  <SectionHeading style={{ marginTop: rhythm(0.5) }}>
+                    {node.frontmatter.sectionHeading}
+                  </SectionHeading>
+                  <div dangerouslySetInnerHTML={{ __html: node.html }} />
+                </Col>
+                <Col>
+                  <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    style={{ marginBottom: 0 }}
+                  >
+                    <p>
+                      <label>
+                        {locale === "en" ? "Name" : "Nimi"}:
+                        <input
+                          style={{ width: "100%" }}
+                          type="text"
+                          name="name"
+                        />
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        {locale === "en" ? "E-mail" : "Sähköposti"}:{" "}
+                        <input
+                          style={{ width: "100%" }}
+                          type="email"
+                          name="email"
+                        />
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        {locale === "en" ? "Message" : "Viesti"}:{" "}
+                        <textarea
+                          style={{ width: "100%" }}
+                          name="message"
+                        ></textarea>
+                      </label>
+                    </p>
+                    <Button secondary type="submit">
+                      {locale === "en" ? "Send" : "Lähetä"}
+                    </Button>
+                  </form>
+                </Col>
+              </Row>
+            )
+          })}
+        </Container>
+      </Wrapper>
+    )
+  }
 }
 
 const Wrapper = styled.div``

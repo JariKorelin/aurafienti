@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
 import Header from "../components/header"
@@ -11,6 +11,8 @@ const Layout = ({ children, locale }) => {
     mainColor: "#007acc",
     mainColorDark: "#015e9c",
   }
+
+  const contactRef = useRef(null)
 
   const data = useStaticQuery(graphql`
     query FooterQuery {
@@ -51,12 +53,13 @@ const Layout = ({ children, locale }) => {
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
-        <Header locale={locale} />
+        <Header contactRef={contactRef} locale={locale} />
         <Container>{children}</Container>
         <FooterIntroduction
           locale={locale}
           content={data.footerIntroduction.edges}
         />
+        <span ref={contactRef}></span>
         <ContactSection locale={locale} content={data.contactSection.edges} />
         <Footer>
           © {new Date().getFullYear()}, Built with
