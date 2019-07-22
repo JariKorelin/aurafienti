@@ -8,7 +8,7 @@ function FrontpageIntroduction({ content }) {
       {content.map(({ node }) => {
         return (
           <div key={node.id}>
-            <h1 style={{ marginTop: rhythm(1) }}>{node.frontmatter.title}</h1>
+            <MainHeading>{node.frontmatter.title}</MainHeading>
             <p>{node.frontmatter.introduction}</p>
           </div>
         )
@@ -16,6 +16,10 @@ function FrontpageIntroduction({ content }) {
     </Container>
   )
 }
+
+const MainHeading = styled.h1`
+  margin-top: ${rhythm(1)};
+`
 
 const Container = styled.div`
   display: flex;

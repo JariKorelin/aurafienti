@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Button from "../components/button"
 import { rhythm } from "../utils/typography"
+import { SectionHeading } from "../utils/styledComponents"
 
 function ContactSection({ content, locale }) {
   return (
@@ -13,9 +14,9 @@ function ContactSection({ content, locale }) {
           return (
             <Row key={node.id}>
               <Col>
-                <h2 style={{ marginTop: rhythm(1) }}>
+                <SectionHeading style={{ marginTop: rhythm(1) }}>
                   {node.frontmatter.sectionHeading}
-                </h2>
+                </SectionHeading>
                 <div dangerouslySetInnerHTML={{ __html: node.html }} />
               </Col>
               <Col>

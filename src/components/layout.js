@@ -1,12 +1,16 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import Header from "../components/header"
 import FooterIntroduction from "../components/footer-introduction"
 import ContactSection from "../components/contact-section"
 import { rhythm } from "../utils/typography"
 
 const Layout = ({ children, locale }) => {
+  const theme = {
+    mainColor: "#007acc",
+  }
+
   const data = useStaticQuery(graphql`
     query FooterQuery {
       footerIntroduction: allMarkdownRemark(
@@ -42,20 +46,22 @@ const Layout = ({ children, locale }) => {
   `)
 
   return (
-    <Wrapper>
-      <Header locale={locale} />
-      <Container>{children}</Container>
-      <FooterIntroduction
-        locale={locale}
-        content={data.footerIntroduction.edges}
-      />
-      <ContactSection locale={locale} content={data.contactSection.edges} />
-      <Footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </Footer>
-    </Wrapper>
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        <Header locale={locale} />
+        <Container>{children}</Container>
+        <FooterIntroduction
+          locale={locale}
+          content={data.footerIntroduction.edges}
+        />
+        <ContactSection locale={locale} content={data.contactSection.edges} />
+        <Footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </Footer>
+      </Wrapper>
+    </ThemeProvider>
   )
 }
 

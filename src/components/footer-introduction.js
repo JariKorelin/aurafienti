@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { rhythm } from "../utils/typography"
+import { SectionHeading } from "../utils/styledComponents"
 
 function FooterIntroduction({ content, locale }) {
   return (
@@ -11,9 +12,9 @@ function FooterIntroduction({ content, locale }) {
 
           return (
             <div key={node.id}>
-              <h2 style={{ marginTop: rhythm(1) }}>
+              <SectionHeading style={{ marginTop: rhythm(1) }}>
                 {node.frontmatter.sectionHeading}
-              </h2>
+              </SectionHeading>
               <h2 style={{ marginTop: rhythm(1) }}>{node.frontmatter.title}</h2>
               <p>{node.frontmatter.introduction}</p>
             </div>

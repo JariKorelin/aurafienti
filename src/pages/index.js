@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import BlogPosts from "../components/blogposts"
 import SEO from "../components/seo"
 import Button from "../components/button"
+import { SectionHeading } from "../utils/styledComponents"
+import { rhythm } from "../utils/typography"
 
 class IndexPage extends React.Component {
   render() {
@@ -18,6 +20,9 @@ class IndexPage extends React.Component {
       <Layout location={this.props.location} title={siteTitle} locale={locale}>
         <SEO title="Aurafienti" />
         <FrontpageIntroduction content={data.frontpageIntroduction.edges} />
+        <SectionHeading style={{ marginTop: rhythm(1) }}>
+          {locale === "en" ? "The latest posts" : "Uusimmat kirjoitukset"}
+        </SectionHeading>
         <BlogPosts posts={posts} />
         <Link to={`${localeUrl}/blog/`}>
           <Button marginTop="85px">
