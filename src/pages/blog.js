@@ -1,10 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import BlogPosts from "../components/blogposts"
 import SEO from "../components/seo"
 import Button from "../components/button"
+import styled from "styled-components"
+import { rhythm } from "../utils/typography"
 
 class Blog extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class Blog extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle} locale={locale}>
         <SEO title="Aurafienti" />
+        <Heading>{locale === "en" ? "Archive" : "Arkisto"}</Heading>
         <BlogPosts posts={posts} />
         <Link to={locale === "en" ? "/" : "/fi"}>
           <Button secondary marginTop="85px">
@@ -62,4 +64,8 @@ export const pageQuery = graphql`
       }
     }
   }
+`
+
+const Heading = styled.h1`
+  margin-top: 0;
 `

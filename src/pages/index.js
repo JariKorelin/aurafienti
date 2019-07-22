@@ -28,7 +28,7 @@ class IndexPage extends React.Component {
         </SectionHeading>
         <BlogPosts posts={posts} />
         <Link to={`${localeUrl}/blog/`}>
-          <Button secondary marginTop="40px" marginBottom="20px">
+          <Button secondary marginTop="40px" marginBottom="40px">
             {locale === "en" ? "View archive" : "Vanhemmat kirjoitukset"}
           </Button>
         </Link>

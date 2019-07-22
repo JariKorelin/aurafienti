@@ -2,7 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
+import styled from "styled-components"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -16,17 +17,9 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
+        <Date>{post.frontmatter.date}</Date>
+        <Heading>{post.frontmatter.title}</Heading>
+        <Hr />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </Layout>
     )
@@ -54,4 +47,21 @@ export const pageQuery = graphql`
       }
     }
   }
+`
+
+const Heading = styled.h1`
+  margin-top: ${rhythm(0.25)};
+  text-align: center;
+`
+
+const Date = styled.p`
+  text-align: center;
+  margin-top: ${rhythm(1)};
+  margin-bottom: ${rhythm(0)};
+`
+
+const Hr = styled.hr`
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 `

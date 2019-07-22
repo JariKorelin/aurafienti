@@ -31,15 +31,7 @@ const MainHeading = styled.h1`
 `
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
   text-align: center;
-  background-color: white;
-  z-index: 10;
-  position: relative;
-  margin-top: ${rhythm(-3)};
-  border-radius: 0 50px 0 0;
-  padding: 0 ${rhythm(1)};
 `
 
 export default FrontpageIntroduction

@@ -79,7 +79,13 @@ const Container = styled.main`
   margin-left: auto;
   margin-right: auto;
   max-width: ${rhythm(26)};
-  padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+  padding: ${rhythm(0.5)} ${rhythm(3 / 4)};
+
+  background-color: white;
+  z-index: 10;
+  position: relative;
+  margin-top: ${rhythm(-1.5)};
+  border-radius: 0 50px 0 0;
 `
 
 const Footer = styled.footer`
