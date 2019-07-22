@@ -10,8 +10,8 @@ function BlogPosts({ posts }) {
         const title = node.frontmatter.title || node.fields.slug
         return (
           <div key={node.fields.slug}>
-            {node.frontmatter.tags.map(tag => (
-              <Tag>{tag}</Tag>
+            {node.frontmatter.tags.map((tag, index) => (
+              <Tag key={index}>{tag}</Tag>
             ))}
             <h3
               style={{
