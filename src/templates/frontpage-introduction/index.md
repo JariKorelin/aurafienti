@@ -1,5 +1,4 @@
 ---
-templateKey: frontpage-introduction
 locale: en
 title: Frontpage introduction heading
 introduction: >-
@@ -7,4 +6,8 @@ introduction: >-
   ullamcorper, sea no regione perpetua scripserit. Nibh etiam dicant no ius. Eum
   error fierent placerat ad, dolorem splendide abhorreant pri in. An quo malis
   solet dissentias. Quo ei brute decore.
+button-text: Read more
+button-link: Article in English
+templateKey: frontpage-introduction
 ---
+
