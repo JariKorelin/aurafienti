@@ -19,13 +19,16 @@ class IndexPage extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle} locale={locale}>
         <SEO title="Aurafienti" />
-        <FrontpageIntroduction content={data.frontpageIntroduction.edges} />
+        <FrontpageIntroduction
+          locale={locale}
+          content={data.frontpageIntroduction.edges}
+        />
         <SectionHeading style={{ marginTop: rhythm(1) }}>
           {locale === "en" ? "The latest posts" : "Uusimmat kirjoitukset"}
         </SectionHeading>
         <BlogPosts posts={posts} />
         <Link to={`${localeUrl}/blog/`}>
-          <Button marginTop="40px">
+          <Button secondary marginTop="40px" marginBottom="20px">
             {locale === "en" ? "View archive" : "Vanhemmat kirjoitukset"}
           </Button>
         </Link>
@@ -85,6 +88,8 @@ export const pageQuery = graphql`
           frontmatter {
             title
             introduction
+            buttonText
+            buttonLink
           }
         }
       }

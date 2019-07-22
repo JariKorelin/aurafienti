@@ -14,7 +14,7 @@ function ContactSection({ content, locale }) {
           return (
             <Row key={node.id}>
               <Col>
-                <SectionHeading style={{ marginTop: rhythm(1) }}>
+                <SectionHeading style={{ marginTop: rhythm(0.5) }}>
                   {node.frontmatter.sectionHeading}
                 </SectionHeading>
                 <div dangerouslySetInnerHTML={{ __html: node.html }} />
@@ -55,7 +55,7 @@ function ContactSection({ content, locale }) {
                       ></textarea>
                     </label>
                   </p>
-                  <Button type="submit">
+                  <Button secondary type="submit">
                     {locale === "en" ? "Send" : "Lähetä"}
                   </Button>
                 </form>

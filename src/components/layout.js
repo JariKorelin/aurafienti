@@ -9,6 +9,7 @@ import { rhythm } from "../utils/typography"
 const Layout = ({ children, locale }) => {
   const theme = {
     mainColor: "#007acc",
+    mainColorDark: "#015e9c",
   }
 
   const data = useStaticQuery(graphql`
@@ -24,6 +25,8 @@ const Layout = ({ children, locale }) => {
               title
               introduction
               locale
+              buttonText
+              buttonLink
             }
           }
         }
@@ -79,6 +82,7 @@ const Container = styled.main`
 const Footer = styled.footer`
   text-align: center;
   margin: 24px;
+  margin-top: ${rhythm(1.5)};
 `
 
 export default Layout

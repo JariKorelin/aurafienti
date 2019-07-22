@@ -1,9 +1,13 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import { rhythm } from "../utils/typography"
 import { SectionHeading } from "../utils/styledComponents"
+import Button from "../components/button"
 
 function FooterIntroduction({ content, locale }) {
+  const localeUrl = locale === "en" ? "/en" : `/${locale}`
+
   return (
     <Wrapper>
       <Container>
@@ -17,6 +21,11 @@ function FooterIntroduction({ content, locale }) {
               </SectionHeading>
               <h2 style={{ marginTop: rhythm(1) }}>{node.frontmatter.title}</h2>
               <p>{node.frontmatter.introduction}</p>
+              <Link to={`${localeUrl}/${node.frontmatter.buttonLink}/`}>
+                <Button marginBottom="20px">
+                  {node.frontmatter.buttonText}
+                </Button>
+              </Link>
             </div>
           )
         })}

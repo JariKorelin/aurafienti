@@ -66,6 +66,12 @@ collections:
           - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
           - { label: "Introduction heading", name: "title", widget: "string" }
           - { label: "Introduction text", name: "introduction", widget: "text" }
+          - { label: "Button text", name: "buttonText", widget: "string" }
+          - {
+              label: "Button link (post slug e.g. 'blog-post-title')",
+              name: "buttonLink",
+              widget: "string",
+            }
           - {
               label: "Template Key",
               name: "templateKey",
@@ -79,6 +85,12 @@ collections:
           - { label: "Locale", name: "locale", widget: "hidden", default: "fi" }
           - { label: "Introduction heading", name: "title", widget: "string" }
           - { label: "Introduction text", name: "introduction", widget: "text" }
+          - { label: "Button text", name: "buttonText", widget: "string" }
+          - {
+              label: "Button link (post slug e.g. 'blog-post-title')",
+              name: "buttonLink",
+              widget: "string",
+            }
           - {
               label: "Template Key",
               name: "templateKey",
@@ -97,6 +109,12 @@ collections:
             }
           - { label: "Introduction heading", name: "title", widget: "string" }
           - { label: "Introduction text", name: "introduction", widget: "text" }
+          - { label: "Button text", name: "buttonText", widget: "string" }
+          - {
+              label: "Button link (post slug e.g. 'blog-post-title')",
+              name: "buttonLink",
+              widget: "string",
+            }
           - {
               label: "Template Key",
               name: "templateKey",
@@ -115,6 +133,12 @@ collections:
             }
           - { label: "Introduction heading", name: "title", widget: "string" }
           - { label: "Introduction text", name: "introduction", widget: "text" }
+          - { label: "Button text", name: "buttonText", widget: "string" }
+          - {
+              label: "Button link (post slug e.g. 'blog-post-title')",
+              name: "buttonLink",
+              widget: "string",
+            }
           - {
               label: "Template Key",
               name: "templateKey",

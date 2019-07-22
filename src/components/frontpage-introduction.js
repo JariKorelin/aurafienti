@@ -1,8 +1,12 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
+import Button from "../components/button"
 import { rhythm } from "../utils/typography"
 
-function FrontpageIntroduction({ content }) {
+function FrontpageIntroduction({ locale, content }) {
+  const localeUrl = locale === "en" ? "/en" : `/${locale}`
+
   return (
     <Container>
       {content.map(({ node }) => {
@@ -10,6 +14,11 @@ function FrontpageIntroduction({ content }) {
           <div key={node.id}>
             <MainHeading>{node.frontmatter.title}</MainHeading>
             <p>{node.frontmatter.introduction}</p>
+            <Link to={`${localeUrl}/${node.frontmatter.buttonLink}/`}>
+              <Button marginBottom="40px" marginLeft="auto" marginRight="auto">
+                {node.frontmatter.buttonText}
+              </Button>
+            </Link>
           </div>
         )
       })}
@@ -30,6 +39,7 @@ const Container = styled.div`
   position: relative;
   margin-top: ${rhythm(-3)};
   border-radius: 0 50px 0 0;
+  padding: 0 ${rhythm(1)};
 `
 
 export default FrontpageIntroduction
