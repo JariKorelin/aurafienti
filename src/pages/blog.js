@@ -19,7 +19,7 @@ class Blog extends React.Component {
         <SEO title="Aurafienti" />
         <Heading>{locale === "en" ? "Archive" : "Arkisto"}</Heading>
         <BlogPosts posts={posts} />
-        <Link to={locale === "en" ? "/" : "/fi"}>
+        <Link to={locale === "en" ? "/en" : "/"}>
           <Button secondary marginTop="40px">
             {locale === "en" ? "Back to frontpage" : "Takaisin etusivulle"}
           </Button>

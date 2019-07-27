@@ -1,9 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import styled from "styled-components"
+import Button from "../components/button"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -21,6 +22,11 @@ class BlogPostTemplate extends React.Component {
         <Heading>{post.frontmatter.title}</Heading>
         <Hr />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Link to={`/${locale}/blog/`}>
+          <Button secondary marginTop="40px">
+            {locale === "en" ? "View archive" : "Vanhemmat kirjoitukset"}
+          </Button>
+        </Link>
       </Layout>
     )
   }
@@ -29,7 +35,7 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query BlogPostByID($id: String!, $locale: String) {
     site {
       siteMetadata {
         title
@@ -41,7 +47,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM DD, YYYY", locale: $locale)
         description
         tags
       }

@@ -24,10 +24,10 @@ const Header = ({ contactRef, locale }) => {
               <HeaderJumpLink onClick={scrollToBottom} href="#">
                 {locale === "en" ? "Contact" : "Yhteystiedot"}
               </HeaderJumpLink>
-              <LanguageLinks>
-                <HeaderLink to="/">In English</HeaderLink>
-                <HeaderLink to="/fi">Suomeksi</HeaderLink>
-              </LanguageLinks>
+              {/* <LanguageLinks>
+                <HeaderLink to="/en">In English</HeaderLink>
+                <HeaderLink to="/">Suomeksi</HeaderLink>
+              </LanguageLinks> */}
             </HeaderLinks>
             <Link
               style={{
@@ -35,7 +35,7 @@ const Header = ({ contactRef, locale }) => {
                 textDecoration: `none`,
                 color: `inherit`,
               }}
-              to={locale === "en" ? "/" : "/fi"}
+              to={locale === "en" ? "/en" : "/"}
             >
               <div
                 style={{
@@ -111,7 +111,8 @@ const HeroImage = styled(props => <Image {...props} />)`
 
 const HeaderLinks = styled.div`
   display: flex;
-  justify-content: space-between;
+  //justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: ${rhythm(1)};
 `
 

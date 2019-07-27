@@ -12,7 +12,6 @@ class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { locale } = this.props.pageContext
-    const localeUrl = locale === "en" ? "" : `/${locale}`
     const siteTitle = data.site.siteMetadata.title
     const posts = data.blogPosts.edges
 
@@ -27,7 +26,7 @@ class IndexPage extends React.Component {
           {locale === "en" ? "The latest posts" : "Uusimmat kirjoitukset"}
         </SectionHeading>
         <BlogPosts posts={posts} />
-        <Link to={`${localeUrl}/blog/`}>
+        <Link to={`/${locale}/blog/`}>
           <Button secondary marginTop="40px">
             {locale === "en" ? "View archive" : "Vanhemmat kirjoitukset"}
           </Button>
@@ -64,7 +63,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMMM DD, YYYY", locale: $locale)
             tags
             title
             description

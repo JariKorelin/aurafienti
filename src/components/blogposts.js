@@ -14,9 +14,7 @@ function BlogPosts({ posts }) {
             {node.frontmatter.tags.map((tag, index) => (
               <Tag key={index}>{tag}</Tag>
             ))}
-            <small style={{ color: "rgba(0, 0, 0, 0.9)" }}>
-              {node.frontmatter.date}
-            </small>
+            <Date>{node.frontmatter.date}</Date>
             <h3
               style={{
                 marginTop: rhythm(1 / 2),
@@ -65,6 +63,13 @@ const Item = styled(props => <Link {...props} />)`
     background-color: #f7f7f7;
     box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.15);
   }
+`
+
+const Date = styled.small`
+  display: block;
+  color: rgba(0, 0, 0, 0.9);
+  margin-top: ${rhythm(0.5)};
+  margin-bottom: ${rhythm(-0.25)};
 `
 
 const Tag = styled.span`
