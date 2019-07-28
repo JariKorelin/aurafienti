@@ -12,6 +12,7 @@ class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { locale } = this.props.pageContext
+    const localeUrl = locale === "en" ? `/en` : ""
     const siteTitle = data.site.siteMetadata.title
     const posts = data.blogPosts.edges
 
@@ -26,7 +27,7 @@ class IndexPage extends React.Component {
           {locale === "en" ? "The latest posts" : "Uusimmat kirjoitukset"}
         </SectionHeading>
         <BlogPosts posts={posts} />
-        <Link to={`/${locale}/blog/`}>
+        <Link to={`${localeUrl}/blog/`}>
           <Button secondary marginTop="40px">
             {locale === "en" ? "View archive" : "Vanhemmat kirjoitukset"}
           </Button>

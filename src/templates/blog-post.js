@@ -9,6 +9,7 @@ import Button from "../components/button"
 class BlogPostTemplate extends React.Component {
   render() {
     const { locale } = this.props.pageContext
+    const localeUrl = locale === "en" ? `/en` : ""
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
 
@@ -22,7 +23,7 @@ class BlogPostTemplate extends React.Component {
         <Heading>{post.frontmatter.title}</Heading>
         <Hr />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <Link to={`/${locale}/blog/`}>
+        <Link to={`${localeUrl}/blog/`}>
           <Button secondary marginTop="40px">
             {locale === "en" ? "View archive" : "Vanhemmat kirjoitukset"}
           </Button>
