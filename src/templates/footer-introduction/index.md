@@ -1,7 +1,6 @@
 ---
 templateKey: footer-introduction
 locale: en
-sectionHeading: Section heading
 title: Footer introduction title
 introduction: >-
   His an affert alterum, usu ad blandit oportere prodesset. Eos in eros quaestio

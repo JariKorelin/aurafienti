@@ -1,7 +1,6 @@
 ---
 templateKey: footer-introduction
 locale: fi
-sectionHeading: Osion otsikko
 title: Alaosan esittelytekstin otsikko
 introduction: >-
   Anu ma lupa moli. pipi suno e kin, len olin ante kiwen ko. ale mi kule waso,

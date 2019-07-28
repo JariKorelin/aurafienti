@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { rhythm } from "../utils/typography"
-import { SectionHeading } from "../utils/styledComponents"
 import Button from "../components/button"
 import Image from "gatsby-image"
 import { Parallax } from "react-scroll-parallax"
@@ -19,9 +18,6 @@ function FooterIntroduction({ content, avatar, locale }) {
           return (
             <div key={node.id}>
               <Parallax y={[10, -10]}>
-                <SectionHeading style={{ marginTop: rhythm(1) }}>
-                  {node.frontmatter.sectionHeading}
-                </SectionHeading>
                 <Row>
                   <Col>
                     <Image
@@ -47,7 +43,7 @@ function FooterIntroduction({ content, avatar, locale }) {
                   <Col>
                     <h2
                       style={{
-                        marginTop: rhythm(0),
+                        marginTop: rhythm(0.5),
                         marginBottom: rhythm(0.5),
                       }}
                     >
