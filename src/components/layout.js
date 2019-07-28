@@ -16,6 +16,13 @@ const Layout = ({ children, locale }) => {
 
   const data = useStaticQuery(graphql`
     query FooterQuery {
+      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       footerIntroduction: allMarkdownRemark(
         filter: { frontmatter: { templateKey: { eq: "footer-introduction" } } }
       ) {
@@ -57,6 +64,7 @@ const Layout = ({ children, locale }) => {
         <Container>{children}</Container>
         <FooterIntroduction
           locale={locale}
+          avatar={data.avatar}
           content={data.footerIntroduction.edges}
         />
         <span ref={contactRef}></span>
