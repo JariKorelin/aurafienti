@@ -40,11 +40,11 @@ class ContactSection extends Component {
                     </p>
                     <p>
                       <label>
-                        {locale === "en" ? "E-mail" : "Sähköposti"}:{" "}
+                        {locale === "en" ? "Phone" : "Puhelin"}:{" "}
                         <input
                           style={{ width: "100%" }}
-                          type="email"
-                          name="email"
+                          type="tel"
+                          name="phone"
                         />
                       </label>
                     </p>

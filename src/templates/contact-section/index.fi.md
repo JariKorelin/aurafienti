@@ -1,10 +1,10 @@
 ---
 locale: fi
-sectionHeading: Osion otsikko
+sectionHeading: Ota yhteyttä
 templateKey: contact-section
 ---
-Suli pona pi wan, e mod cont sona palisa. sama kalama ma oth, open waso sitelen ken mu. unpa kasi pakala li oko, kin pona poka kalama en.
 
-Puhelin: +358 1234 567\
-Sähköposti: <mailto:lorem@aurafienti.fi>\
-WeChat: [Lorem Ipsum](https://www.wechat.com)
+Kiinnostuitko? Ota yhteyttä niin jutellaan! Voit myös halutessasi jättää yhteydenottopyynnön oheisella lomakkeella.
+
+Puhelin: +358 50 4803 124\
+Sähköposti: <mailto:jari.korelin@aurafienti.fi>
