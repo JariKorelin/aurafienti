@@ -15,7 +15,7 @@ function FrontpageIntroduction({ locale, content }) {
             <MainHeading>{node.frontmatter.title}</MainHeading>
             <p>{node.frontmatter.introduction}</p>
             <Link to={`${localeUrl}/${node.frontmatter.buttonLink}/`}>
-              <Button marginBottom="40px" marginLeft="auto" marginRight="auto">
+              <Button marginBottom="60px" marginLeft="auto" marginRight="auto">
                 {node.frontmatter.buttonText}
               </Button>
             </Link>
