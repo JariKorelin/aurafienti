@@ -5,6 +5,7 @@ import Header from "../components/header"
 import FooterIntroduction from "../components/footer-introduction"
 import ContactSection from "../components/contact-section"
 import { rhythm } from "../utils/typography"
+import { ParallaxProvider } from "react-scroll-parallax"
 
 const Layout = ({ children, locale }) => {
   const theme = {
@@ -59,22 +60,24 @@ const Layout = ({ children, locale }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Wrapper>
-        <Header contactRef={contactRef} locale={locale} />
-        <Container>{children}</Container>
-        <FooterIntroduction
-          locale={locale}
-          avatar={data.avatar}
-          content={data.footerIntroduction.edges}
-        />
-        <span ref={contactRef}></span>
-        <ContactSection locale={locale} content={data.contactSection.edges} />
-        <Footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </Footer>
-      </Wrapper>
+      <ParallaxProvider>
+        <Wrapper>
+          <Header contactRef={contactRef} locale={locale} />
+          <Container>{children}</Container>
+          <FooterIntroduction
+            locale={locale}
+            avatar={data.avatar}
+            content={data.footerIntroduction.edges}
+          />
+          <span ref={contactRef}></span>
+          <ContactSection locale={locale} content={data.contactSection.edges} />
+          <Footer>
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </Footer>
+        </Wrapper>
+      </ParallaxProvider>
     </ThemeProvider>
   )
 }
@@ -86,14 +89,17 @@ const Wrapper = styled.div`
 const Container = styled.main`
   margin-left: auto;
   margin-right: auto;
-  max-width: ${rhythm(26)};
+  margin-top: ${rhythm(-1.5)};
+  max-width: 95%;
   padding: ${rhythm(0.5)} ${rhythm(3 / 4)} ${rhythm(2.5)};
-
   background-color: white;
   z-index: 10;
   position: relative;
-  margin-top: ${rhythm(-1.5)};
   border-radius: 0 50px 0 0;
+
+  @media screen and (min-width: 760px) {
+    max-width: ${rhythm(26)};
+  }
 `
 
 const Footer = styled.footer`

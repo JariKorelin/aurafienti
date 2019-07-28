@@ -5,6 +5,7 @@ import { rhythm } from "../utils/typography"
 import { SectionHeading } from "../utils/styledComponents"
 import Button from "../components/button"
 import Image from "gatsby-image"
+import { Parallax } from "react-scroll-parallax"
 
 function FooterIntroduction({ content, avatar, locale }) {
   const localeUrl = locale === "en" ? "/en" : `/${locale}`
@@ -17,45 +18,50 @@ function FooterIntroduction({ content, avatar, locale }) {
 
           return (
             <div key={node.id}>
-              <SectionHeading style={{ marginTop: rhythm(1) }}>
-                {node.frontmatter.sectionHeading}
-              </SectionHeading>
-              <Row>
-                <Col>
-                  <Image
-                    fluid={avatar.childImageSharp.fluid}
-                    alt="Jari Korelin"
-                    style={{
-                      marginRight: rhythm(1 / 2),
-                      marginBottom: 0,
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                      minWidth: 150,
-                      borderRadius: "100%",
-                    }}
-                    imgStyle={{
-                      borderRadius: "50%",
-                    }}
-                  />
-                  <NameTitle>
-                    <strong>Jari Korelin</strong>
-                    <p>CEO &amp; Founder</p>
-                  </NameTitle>
-                </Col>
-                <Col>
-                  <h2
-                    style={{ marginTop: rhythm(0), marginBottom: rhythm(0.5) }}
-                  >
-                    {node.frontmatter.title}
-                  </h2>
-                  <p>{node.frontmatter.introduction}</p>
-                  <Link to={`${localeUrl}/${node.frontmatter.buttonLink}/`}>
-                    <Button marginBottom="20px">
-                      {node.frontmatter.buttonText}
-                    </Button>
-                  </Link>
-                </Col>
-              </Row>
+              <Parallax y={[10, -10]}>
+                <SectionHeading style={{ marginTop: rhythm(1) }}>
+                  {node.frontmatter.sectionHeading}
+                </SectionHeading>
+                <Row>
+                  <Col>
+                    <Image
+                      fluid={avatar.childImageSharp.fluid}
+                      alt="Jari Korelin"
+                      style={{
+                        marginRight: rhythm(1 / 2),
+                        marginBottom: 0,
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                        minWidth: 150,
+                        borderRadius: "100%",
+                      }}
+                      imgStyle={{
+                        borderRadius: "50%",
+                      }}
+                    />
+                    <NameTitle>
+                      <strong>Jari Korelin</strong>
+                      <p>CEO &amp; Founder</p>
+                    </NameTitle>
+                  </Col>
+                  <Col>
+                    <h2
+                      style={{
+                        marginTop: rhythm(0),
+                        marginBottom: rhythm(0.5),
+                      }}
+                    >
+                      {node.frontmatter.title}
+                    </h2>
+                    <p>{node.frontmatter.introduction}</p>
+                    <Link to={`${localeUrl}/${node.frontmatter.buttonLink}/`}>
+                      <Button marginBottom="20px">
+                        {node.frontmatter.buttonText}
+                      </Button>
+                    </Link>
+                  </Col>
+                </Row>
+              </Parallax>
             </div>
           )
         })}

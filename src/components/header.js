@@ -2,10 +2,10 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
-import Button from "../components/button"
 import styled from "styled-components"
 import { rhythm } from "../utils/typography"
 import logoImage from "../../content/assets/logo-aurafienti.svg"
+import { Parallax } from "react-scroll-parallax"
 
 const Header = ({ contactRef, locale }) => {
   const scrollToBottom = event => {
@@ -37,16 +37,18 @@ const Header = ({ contactRef, locale }) => {
               }}
               to={locale === "en" ? "/en" : "/"}
             >
-              <div
-                style={{
-                  marginLeft: `auto`,
-                  marginRight: `auto`,
-                  maxWidth: rhythm(22),
-                  padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-                }}
-              >
-                <img src={logoImage} alt="Aurafienti logo" />
-              </div>
+              <Parallax y={[30, -10]}>
+                <div
+                  style={{
+                    marginLeft: `auto`,
+                    marginRight: `auto`,
+                    maxWidth: rhythm(22),
+                    padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+                  }}
+                >
+                  <img src={logoImage} alt="Aurafienti logo" />
+                </div>
+              </Parallax>
             </Link>
           </PageHeader>
         )
