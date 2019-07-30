@@ -1,11 +1,9 @@
 ---
 templateKey: footer-introduction
 locale: fi
-title: Alaosan esittelytekstin otsikko
+title: Aurafienti Oy
 introduction: >-
-  Anu ma lupa moli. pipi suno e kin, len olin ante kiwen ko. ale mi kule waso,
-  prep poki pakala jan pi, lupa moli lukin oth o. tu oth sewi sitelen, pi mod
-  lupa unpa palisa. ali tu prep tenpo palisa, a nena sike oko.
-buttonText: Lue lisää
-buttonLink: suomenkielinen-kirjoitus
+  Aurafienti Oy on turkulainen vientiä ja viennin edistämistä harjoittava yritys. Yrityksen missiona on auttaa innovatiivisia suomalaisia ruoka- ja juoma-alan yrityksiä tukevaan kasvuun Aasian markkinoilla. Vahvan kontakti- ja yhteistyökumppaniverkoston avulla pystytään kustannustehokkaasti tuottamaan kaikki uusille markkinoille pääsemiseksi vaadittavat palvelut.
+buttonText: Lue lisää palveluistamme
+buttonLink: aurafienti-oy
 ---

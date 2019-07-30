@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Aurafienti`,
-    description: `We deliver Finland`,
+    description: `Aurafienti Oy on turkulainen vientiä ja viennin edistämistä harjoittava yritys. Yrityksen missiona on auttaa innovatiivisia suomalaisia ruoka- ja juoma-alan yrityksiä tukevaan kasvuun Aasian markkinoilla.`,
     author: `Jari Korelin`,
     siteUrl: `https://aurafienti.netlify.com/`,
   },
