@@ -28,6 +28,7 @@ class ContactSection extends Component {
                     data-netlify="true"
                     style={{ marginBottom: 0 }}
                   >
+                    <input type="hidden" name="form-name" value="contact" />
                     <p>
                       <label>
                         {locale === "en" ? "Name" : "Nimi"}:
@@ -40,21 +41,18 @@ class ContactSection extends Component {
                     </p>
                     <p>
                       <label>
-                        {locale === "en" ? "Phone" : "Puhelin"}:{" "}
+                        {locale === "en" ? "E-mail" : "Sähköposti"}:{" "}
                         <input
                           style={{ width: "100%" }}
-                          type="tel"
-                          name="phone"
+                          type="email"
+                          name="email"
                         />
                       </label>
                     </p>
                     <p>
                       <label>
                         {locale === "en" ? "Message" : "Viesti"}:{" "}
-                        <textarea
-                          style={{ width: "100%" }}
-                          name="message"
-                        ></textarea>
+                        <textarea style={{ width: "100%" }} name="message" />
                       </label>
                     </p>
                     <Button secondary type="submit">
